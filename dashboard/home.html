@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.bootstrap.css">
+    <title>Home</title>
+</head>
+<body style="background-color: #F5F5F5;">
+
+    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+        <div class="container-fluid">
+			<a 	class="navbar-brand c-yellow"
+				href="#" style="font-style: oblique; font-family: fantasy;">
+				GM Frotas
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+					<li class="nav-item">
+						<a class="nav-link {{ Menu::isActive('dashboard$') }}" href="{{ route('dashboard.home') }}">Início</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link {{ Menu::isActive('search$') }}" href="{{ route('dashboard.search') }}">Buscar histórico</a>
+					</li>
+
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {{ Menu::isActive('triage|bolsefamily|assistant') }}" href="#" id="navbarDropdownSemdhs" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Secretaria Municipal do Desenvolvimento Humano e Social">
+								SEMDHS
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownSemdhs">
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.semdhs.triage.services.index') }}">Serviços (recepção)</a></li>
+									<li><a class="dropdown-item" href="{{ route('dashboard.semdhs.triage.attendance.create') }}">Registrar novo atendimento (recepção)</a></li>
+									<li><a class="dropdown-item" href="{{ route('dashboard.semdhs.triage.report.view') }}">Ver atendimentos realizados por período (recepção)</a></li>
+									
+									<li><hr class="dropdown-divider"></li>
+
+									<li><a class="dropdown-item" href="{{ route('dashboard.semdhs.assistant.assistants.index') }}">Assistentes sociais (assistente social)</a></li>
+								
+								<li><hr class="dropdown-divider"></li>
+
+									<li><a class="dropdown-item" href="{{ route('dashboard.semdhs.bolsefamily.coordinators.index') }}">Coordenador(a) (bolsa família)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.semdhs.bolsefamily.identify.family.create') }}">Cadastrar formulário de atendimento (bolsa família)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.semdhs.bolsefamily.chart.between.index') }}">Ver gráficos/relatórios quantitativos (bolsa família)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.semdhs.bolsefamily.report.people.view') }}">Ver relatórios de atendimentos (bolsa família)</a></li>
+								
+
+								<li><hr class="dropdown-divider"></li>
+
+								
+								
+							</ul>
+						</li>
+					
+
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {{ Menu::isActive('cras') }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Centro de Referência de Assistência Social">
+								CRAS
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.triage.attendance.create') }}">Registrar novo atendimento (recepção)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.triage.report.view') }}">Ver atendimentos realizados por período (recepção)</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.assistant.coordinators.index') }}">Coordenador(a)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.assistant.assistants.index') }}">Assistentes sociais</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.assistant.psychologys.index') }}">Psicólogos</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+
+								
+
+								
+
+								<li><hr class="dropdown-divider"></li>
+
+								
+
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.assistant.rmas.index') }}">Registro Mensal de Atendimento (RMA)</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.pcf.supervisors.index') }}">Supervisores (PCF)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.pcf.visitors.index') }}">Visitadores (PCF)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.pcf.attendances.index') }}">Crianças/Gestantes (PCF)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.pcf.search.view') }}">Consultar crianças/gestantes (PCF)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.cras.pcf.report.people.view') }}">Ver relatórios por período (PCF)</a></li>
+								
+							</ul>
+						</li>
+					
+
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {{ Menu::isActive('creas') }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Centro de Referência Especializado de Assistência Social">
+								CREAS
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="{{ route('dashboard.creas.assistant.coordinators.index') }}">Coordenador(a)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.creas.assistant.assistants.index') }}">Assistentes sociais</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.creas.assistant.psycologys.index') }}">Psicólogos</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+
+								
+
+								<li><hr class="dropdown-divider"></li>
+								
+								
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.creas.assistant.rmas.index') }}">Registro Mensal de Atendimento (RMA)</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+
+									<li><a class="dropdown-item" href="{{ route('dashboard.creas.coordinatorfemale.attendance.create') }}">Registrar atendimento (coordenadoria da mulher)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.creas.coordinatorfemale.search.view') }}">Consultar atendimento (coordenadoria da mulher)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.creas.coordinatorfemale.report-activity.index') }}">Relatórios de atividades mensais (coordenadoria da mulher)</a></li>
+									<li><a class="dropdown-item" href="{{ route('dashboard.creas.coordinatorfemale.chart.between.index') }}">Ver gráficos/relatórios quantitativos (coordenadoria da mulher)</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.creas.coordinatorfemale.report-activity.territory.view') }}">Consultar atendimento por território (coordenadoria da mulher)</a></li>
+								
+							</ul>
+						</li>
+					
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {{ Menu::isActive('scfv') }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Serviço de Convivência e Fortalecimento de Vínculos">
+								SCFV
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="{{ route('dashboard.scfv.groups.index') }}">Grupos</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.scfv.unitys.index') }}">Unidades</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+							</ul>
+						</li>
+					
+
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {{ Menu::isActive('paa') }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Programa de Aquisição de Alimentos">
+								PAA
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="{{ route('dashboard.paa.coordinators.index') }}">Coordenador</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.paa.providers.index') }}">Fornecedores</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.paa.products.index') }}">Produtos</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.paa.entitys.index') }}">Entidades</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.paa.seasons.index') }}">Etapas</a></li>
+
+									<li><a class="dropdown-item" href="{{ route('dashboard.paa.purchases.search.view') }}">Comprar produtos</a></li>
+									<li><a class="dropdown-item" href="{{ route('dashboard.paa.deliverys.search.view') }}">Realizar entrega de produtos</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {{ Menu::isActive('administration') }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Administração">
+								Administração
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="{{ route('dashboard.administration.users.index') }}">Usuários</a></li>
+									<li><a class="dropdown-item" href="{{ route('dashboard.administration.technicals.index') }}">Técnicos</a></li>
+									<li><a class="dropdown-item" href="{{ route('dashboard.administration.technical.search.production') }}">Consultar produção dos técnicos</a></li>
+									<li><a class="dropdown-item" href="{{ route('dashboard.administration.report.all.index') }}">Ver relatórios de atendimentos em geral</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.administration.unitys.index') }}">Unidades / Programas</a></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.administration.districts.index') }}">Bairros</a></li>
+									<li><hr class="dropdown-divider"></li>
+								
+									<li><a class="dropdown-item" href="{{ route('dashboard.administration.config.prefectures.index') }}">Configurações gerais</a></li>
+									<li><a class="dropdown-item" href="{{ route('dashboard.administration.holidays.index') }}">Feriados</a></li>
+								
+							</ul>
+						</li>
+					
+
+				</ul>
+
+				
+				<div class="d-flex">
+					<div class="nav-item dropdown d-flex flex-row align-items-center">
+						<div
+							id="navbarDropdownn" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+							class="d-flex flex-row justify-content-center align-items-center text-uppercase text-white rounded-circle me-2 bg-yellow" 
+							style="width:30px; height:30px;"
+							title="{{ Auth::user()->name }}"
+						>
+							J
+						</div>
+						<ul class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="{{ route('dashboard.user.profile.index') }}">Meus dados</a></li>
+							<li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../index.html">Sair</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+        </div>
+    </nav>
+
+	<div class="p-3">
+		teste
+	</div>
+
+	<script src="../js/bootstrap.min.js"></script>	
+    
+</body>
+</html>
