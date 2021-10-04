@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/custom.bootstrap.css">
+    <title>Home</title>
+</head>
+<body style="background-color: #F5F5F5;">
+
+    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+        <div class="container-fluid">
+			<a 	class="navbar-brand c-yellow"
+				href="../home.html" style="font-style: oblique; font-family: fantasy;">
+				GM Frotas
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+					<li class="nav-item">
+						<a class="nav-link" href="../home.html">Início</a>
+					</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSemdhs" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Secretaria Municipal do Desenvolvimento Humano e Social">
+								Veículos
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownSemdhs">
+								<li><a class="dropdown-item" href="cars/create.html">Cadastro do veículo</a></li>
+								<li><a class="dropdown-item" href="#">Documentação e Emplacamento</a></li>
+								<li><a class="dropdown-item" href="#">Disponibilidade</a></li>
+								<li><a class="dropdown-item" href="#">Data da manutenção</a></li>
+								<li><a class="dropdown-item" href="#">Abastecimento</a></li>
+								<li><a class="dropdown-item" href="#">Quilometragem rodada</a></li>
+							</ul>
+						</li>
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Centro de Referência de Assistência Social">
+								Relatórios de multas
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="#">Exibir histórico de multas</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="#">Multas pendentes</a></li>
+								<li><a class="dropdown-item" href="#">Multas quitadas</a></li>
+							</ul>
+						</li>
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Centro de Referência Especializado de Assistência Social">
+								Relatórios de combustíveis
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="#">Histórico de abastecimentos</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="#">Gastos individuais com transporte</a></li>
+								<li><a class="dropdown-item" href="#">Relatórios mensais de consumo</a></li>
+							</ul>
+						</li>
+					
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Serviço de Convivência e Fortalecimento de Vínculos">
+								Motoristas
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="#">Cadastro dos motoristas</a></li>
+								<li><a class="dropdown-item" href="#">Verificar disponibilidade</a></li>
+								<li><a class="dropdown-item" href="#">Quilometragem percorrida</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="#">Cadastrar CNH</a></li>
+								<li><a class="dropdown-item" href="#">Situação atual da CNH</a></li>
+							</ul>
+						</li>
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Programa de Aquisição de Alimentos">
+								Documentação veícular
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="#">Consultar licencimento</a></li>
+								<li><a class="dropdown-item" href="#">Consultar IPVA</a></li>
+								<li><a class="dropdown-item" href="#">Consultar seguro obrigatório</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Programa de Aquisição de Alimentos">
+								Manutenção
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="#">Histórico de manutenções gerais</a></li>
+								<li><a class="dropdown-item" href="#">Histórico de manutenções individuais</a></li>
+								<li><a class="dropdown-item" href="#">Serviços realizados por período</a></li>
+								<li><a class="dropdown-item" href="#">Cronograma de realização de manutenção</a></li>
+								<li><a class="dropdown-item" href="#">Relatório com gastos mensail em manutenção</a></li>
+							</ul>
+						</li>
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {{ Menu::isActive('administration') }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Administração">
+								Admin
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="#">Usuários</a></li>
+								<li><a class="dropdown-item" href="#">Configurações gerais</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+
+				<div class="d-flex">
+					<div class="nav-item dropdown d-flex flex-row align-items-center">
+						<div
+							id="navbarDropdownn" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+							class="d-flex flex-row justify-content-center align-items-center text-uppercase text-white rounded-circle me-2 bg-yellow" 
+							style="width:30px; height:30px;"
+							title="{{ Auth::user()->name }}"
+						>
+							J
+						</div>
+						<ul class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">Meus dados</a></li>
+							<li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../index.html">Sair</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+        </div>
+    </nav>
+
+	<div class="p-3">
+        <div class="border rounded bg-white p-3">
+            <h4 class="text-primary fw-bold mb-3">Cadastrar veículo</h4>
+
+            <div class="d-md-flex">
+                <div class="col-md-2 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="type">Tipo</label>
+                    <select class="form-select bg-light" id="type">
+                        <option value="">Selecione</option>
+                        <option value="">Automóvel</option>
+                        <option value="">Caminhão</option>
+                        <option value="">Caminhonete</option>
+                        <option value="">Camioneta</option>
+                        <option value="">Utilitário</option>
+                        <option value="">Micro ônibus</option>
+                        <option value="">Ciclomotor</option>
+                        <option value="">Motoneta</option>
+                        <option value="">Motocicleta</option>
+                    </select>
+                </div>
+                <div class="col-md-2 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="placa">Placa</label>
+                    <input type="text" class="form-control bg-light" id="placa">
+                </div>
+                <div class="col-md-2 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="placa">Veículo</label>
+                    <input type="text" class="form-control bg-light" id="placa">
+                </div>
+                <div class="col-md-2 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="placa">Cor</label>
+                    <input type="text" class="form-control bg-light" id="placa">
+                </div>
+                <div class="col-md-2 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="placa">Chassi</label>
+                    <input type="text" class="form-control bg-light" id="placa">
+                </div>
+                <div class="col-md-2 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="placa">Renavam</label>
+                    <input type="text" class="form-control bg-light" id="placa">
+                </div>
+            </div>
+
+            <div class="d-md-flex">
+                <div class="col-md-2 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="type">Tipo de combustível</label>
+                    <select class="form-select bg-light" id="type">
+                        <option value="">Gasolina</option>
+                        <option value="">Diesel</option>
+                        <option value="">Etanol</option>
+                    </select>
+                </div>
+                <div class="col-md-3 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="type">Data de fabricação</label>
+                    <input type="date" class="form-control bg-light" id="placa">
+                </div>
+                <div class="col-md-2 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="placa">KM Inicial</label>
+                    <input type="text" class="form-control bg-light" id="placa">
+                </div>
+                <div class="col-md-3 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="placa">Carga máxima permitida</label>
+                    <input type="text" class="form-control bg-light" id="placa">
+                </div>
+                <div class="col-md-1 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="placa">Ano</label>
+                    <input type="text" class="form-control bg-light" id="placa">
+                </div>
+                <div class="col-md-1 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="placa">Modelo</label>
+                    <input type="text" class="form-control bg-light" id="placa">
+                </div>
+            </div>
+
+            <div class="d-md-flex">
+                <div class="col-md-2 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="type">IPVA Pago?</label>
+                    <select class="form-select bg-light" id="type">
+                        <option value="">Selecione</option>
+                        <option value="">Sim</option>
+                        <option value="">Não</option>
+                    </select>
+                </div>
+                <div class="col-md-3 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="type">Licenciamento Pago?</label>
+                    <select class="form-select bg-light" id="type">
+                        <option value="">Selecione</option>
+                        <option value="">Sim</option>
+                        <option value="">Não</option>
+                    </select>
+                </div>
+                <div class="col-md-2 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="type">Seguro Pago?</label>
+                    <select class="form-select bg-light" id="type">
+                        <option value="">Selecione</option>
+                        <option value="">Sim</option>
+                        <option value="">Não</option>
+                    </select>
+                </div>
+                <div class="col-md-5 ps-md-4 mb-3">
+                    <label class="form-label text-secondary fw-bold" for="type">Foto</label>
+                    <input type="file" class="form-control" name="" id="">
+                </div>
+            </div>
+
+            <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="../home.html" class="btn text-primary border-primary bg-white">Voltar</a>
+                <a href="../cars/create.html" class="btn btn-primary">Cadastrar</a>
+            </div>
+            
+        </div>
+		
+	</div>
+
+	<script src="../../js/bootstrap.min.js"></script>	
+    
+</body>
+</html>
